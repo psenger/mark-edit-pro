@@ -1,0 +1,33 @@
+{
+  "name": "mark-edit-pro",
+  "version": "0.0.0",
+  "description": "An Express Server that can Render MarkDown and allow the user to edit them.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www"
+  },
+  "engines": {
+    "node": ">=18.0.0 <19.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.3.3",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "~4.16.1",
+    "express-session": "^1.18.0",
+    "http-errors": "^2.0.0",
+    "marked": "^13.0.3",
+    "morgan": "~1.9.1",
+    "passport": "^0.7.0",
+    "passport-github2": "^0.1.12",
+    "passport-http": "^0.3.0",
+    "serve-favicon": "^2.5.0"
+  }
+}
