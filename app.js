@@ -5,6 +5,7 @@ const favicon = require('serve-favicon')
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const matter = require('gray-matter');
 const marked = require('marked');
 const app = express();
 const router = express.Router()
@@ -43,14 +44,16 @@ app.get('*', (req, res, next) => {
         if (!err) {
             fs.readFile(mdFilePath, 'utf-8', (err, content) => {
                 if (err) return next(createError(500, err));
-                return res.render('template', { content });
+                const {data} = matter(content)
+                return res.render('template', { content, frontmatter: data });
             });
         } else {
             fs.access(mdxFilePath, fs.constants.F_OK, (err) => {
                 if (!err) {
                     fs.readFile(mdxFilePath, 'utf-8', (err, content) => {
                         if (err) return next(createError(500, err));
-                        return res.render('template', { content });
+                        const {data} = matter(content)
+                        return res.render('template', { content, frontmatter: data });
                     });
                 } else {
                     next(createError(404));

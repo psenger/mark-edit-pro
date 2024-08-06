@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="/css/github-markdown.css">
     <link rel="icon" type="image/png" href="/favicon.ico">
 
+    <script type="text/javascript" src="/js/frontmatter.js"></script>
     <script type="text/javascript" src="/js/marked.min.js"></script>
     <script type="text/javascript" src="/js/purify.min.js"></script>
     <script type="text/javascript" src="/js/ace/ace.js"></script>
@@ -20,6 +21,9 @@
     <title>Mark edit pro</title>
     <script type="text/mdx" id="mdx-content">
 <%- content %>
+    </script>
+    <script type="application/json" id="frontmatter-content">
+<%- JSON.stringify(frontmatter,null,4) %>
     </script>
 </head>
 <body>
@@ -35,10 +39,12 @@
 </header>
 
 <div id="container">
-
+    <div id="frontmatter" class="column">
+        <div id="front-matter-form"></div>
+    </div>
     <div id="edit" class="column">
         <div id="editor-wrapper">
-            <div id="editor"> </div>
+            <div id="editor"></div>
         </div>
     </div>
     <div id="preview" class="column">

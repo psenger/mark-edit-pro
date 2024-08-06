@@ -7,6 +7,7 @@
 * [markedjs/marked](https://github.com/markedjs/marked)
 * [Storehouse.js](https://github.com/tanabe/Storehouse-js)
 * [cure53/DOMPurify](https://github.com/cure53/DOMPurify)
+* [gray-matter.js](https://github.com/jonschlinkert/gray-matter)
 
 ## Description
 
